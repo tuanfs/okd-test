@@ -1,0 +1,21 @@
+FROM default-route-openshift-image-registry.apps.prod01.fis-cloud.fpt.com/openshift/nodejs:16-ubi8 AS Builder
+
+WORKDIR /apps
+
+USER 0
+COPY . .
+RUN chown -R 1001:0 ./
+USER 1001
+
+RUN npm install
+RUN npm run build
+
+FROM default-route-openshift-image-registry.apps.prod01.fis-cloud.fpt.com/openshift/nodejs:16-ubi8
+
+WORKDIR /apps
+
+COPY --from=builder apps/package.json .
+COPY --from=builder apps/node_modules node_modules
+COPY --from=builder apps/build build
+
+CMD node build/index.js
