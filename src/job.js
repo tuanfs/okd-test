@@ -13,9 +13,11 @@ export function startCronJobs() {
       axios.get('https://10.15.220.87/v2').catch((err) => {
         console.log('error', err);
       });
-      axios.get('https://10.15.220.87/v2').catch((err) => {
-        console.log('error', err);
-      });
+      axios
+        .get('http://okd-test-git.sample.svc.cluster.local:3200/v2')
+        .catch((err) => {
+          console.log('error', err);
+        });
     },
     null,
     true,
@@ -28,7 +30,9 @@ export const axiosCallTest = () => {
   axios.get('https://10.15.220.87/v2').catch((err) => {
     console.log('error', err);
   });
-  axios.get('https://10.15.220.87/v2').catch((err) => {
-    console.log('error', err);
-  });
+  axios
+    .get('http://okd-test-git.sample.svc.cluster.local:3200/v2')
+    .catch((err) => {
+      console.log('error', err);
+    });
 };
