@@ -1,10 +1,10 @@
 import {CronJob} from 'cron';
 
 const now = new Date();
-const twoMinutesLater = new Date(now.getTime() + 1.5 * 60 * 1000);
+const twoMinutesLater = new Date(now.getTime() + 3 * 60 * 1000);
 
 export function startCronJobs() {
-  console.log('44444555555555555555555555');
+  console.log('startCronJobs');
   const job = new CronJob(
     twoMinutesLater,
     () => {
