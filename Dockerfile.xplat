@@ -1,4 +1,4 @@
-FROM default-route-openshift-image-registry.apps.prod01.fis-cloud.fpt.com/openshift/nodejs:16-ubi8 AS Builder
+FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:16-ubi8 AS Builder
 
 WORKDIR /apps
 
@@ -10,7 +10,7 @@ USER 1001
 RUN npm install
 RUN npm run build
 
-FROM default-route-openshift-image-registry.apps.prod01.fis-cloud.fpt.com/openshift/nodejs:16-ubi8
+FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:16-ubi8
 
 WORKDIR /apps
 
