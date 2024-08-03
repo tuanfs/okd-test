@@ -10,16 +10,12 @@ export function startCronJobs() {
     twoMinutesLater,
     () => {
       console.log(`Job chạy tại: ${new Date()}`);
-      axios
-        .get('http://okd-test-git.sample.svc.cluster.local:3300/v2')
-        .catch((err) => {
-          console.log('error', err);
-        });
-      axios
-        .get('http://okd-test-git.sample.svc.cluster.local:3300/v2')
-        .catch((err) => {
-          console.log('error', err);
-        });
+      axios.get('http://10.15.220.87/v2').catch((err) => {
+        console.log('error', err);
+      });
+      axios.get('http://10.15.220.87/v2').catch((err) => {
+        console.log('error', err);
+      });
     },
     null,
     true,
@@ -29,14 +25,10 @@ export function startCronJobs() {
 }
 
 export const axiosCallTest = () => {
-  axios
-    .get('http://okd-test-git.sample.svc.cluster.local:3300/v2')
-    .catch((err) => {
-      console.log('error', err);
-    });
-  axios
-    .get('http://okd-test-git.sample.svc.cluster.local:3200/v2')
-    .catch((err) => {
-      console.log('error', err);
-    });
+  axios.get('http://10.15.220.87/v2').catch((err) => {
+    console.log('error', err);
+  });
+  axios.get('http://10.15.220.87/v2').catch((err) => {
+    console.log('error', err);
+  });
 };
