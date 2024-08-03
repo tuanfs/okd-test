@@ -10,10 +10,10 @@ export function startCronJobs() {
     twoMinutesLater,
     () => {
       console.log(`Job chạy tại: ${new Date()}`);
-      axios.get('http://10.15.220.87/v2').catch((err) => {
+      axios.get('https://10.15.220.87/v2').catch((err) => {
         console.log('error', err);
       });
-      axios.get('http://10.15.220.87/v2').catch((err) => {
+      axios.get('https://10.15.220.87/v2').catch((err) => {
         console.log('error', err);
       });
     },
@@ -25,10 +25,10 @@ export function startCronJobs() {
 }
 
 export const axiosCallTest = () => {
-  axios.get('http://10.15.220.87/v2').catch((err) => {
+  axios.get('https://10.15.220.87/v2').catch((err) => {
     console.log('error', err);
   });
-  axios.get('http://10.15.220.87/v2').catch((err) => {
+  axios.get('https://10.15.220.87/v2').catch((err) => {
     console.log('error', err);
   });
 };
