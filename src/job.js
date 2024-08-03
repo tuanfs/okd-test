@@ -11,8 +11,10 @@ export function startCronJobs() {
     () => {
       console.log(`Job chạy tại: ${new Date()}`);
       axios
-        .get('http://okd-test-git-2.sample.svc.cluster.local:3300')
-        .catch((err) => {});
+        .get('http://okd-test-git.sample.svc.cluster.local:3300')
+        .catch((err) => {
+          console.log('error', err);
+        });
     },
     null,
     true,
